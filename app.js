@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
 app.get('/gif/image.gif', function (req, res) {
        const imageBgSrc = `${imagesDir}${defaultBgImage}`;
 
-    CountdownGenerator.init(new Date('2018-09-24T20:35'), '470', '470', '000000', '000000', 'imagen', imageBgSrc,  10, () => {
+    CountdownGenerator.init(new Date('2018-09-24T20:35'), '200', '200', '000000', '000000', 'imagen', imageBgSrc,  20, () => {
         let filePath = tmpDir + 'imagen.gif';
         res.sendFile(filePath);
     });
