@@ -21,6 +21,10 @@ app.get('/', function (req, res) {
     res.sendFile(publicDir + 'index.html');
 });
 
+app.get('/gif/image.gif', function (req, res) {
+	res.sendFile(imagesDir + 'ex1.gif');
+});
+
 // generate and download the gif
 app.get('/generate', function (req, res) {
     let {time, width, height, color, bg, name, withImageBg, frames} = req.query;
