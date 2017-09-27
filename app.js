@@ -22,7 +22,12 @@ app.get('/', function (req, res) {
 });
 
 app.get('/gif/image.gif', function (req, res) {
-	res.sendFile(imagesDir + 'ex1.gif');
+       const imageBgSrc = `${imagesDir}${defaultBgImage}`;
+
+    CountdownGenerator.init(new Date('2018-09-24T20:35'), '470', '470', '000000', '000000', 'imagen', imageBgSrc,  10, () => {
+        let filePath = tmpDir + 'imagen.gif';
+        res.sendFile(filePath);
+    });
 });
 
 // generate and download the gif
